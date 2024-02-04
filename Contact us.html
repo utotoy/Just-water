@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+    <link rel="stylesheet" href="STYLESHEET.CSS">
+    <link rel="icon" type="image/x-icon" href="water-drop.png">
+    <style>        
+        .RegisteryContainer {
+        background-color: rgba(211, 211, 211, 0.7) !important;
+        width: 50vw;
+        height: 100%;
+        margin-left: 25%;
+        margin-right: 30%;
+        transition: 1s;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    .signup {
+        margin-left: 40%;
+        margin-right: 35%;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background: linear-gradient(to top, #f6f1d3, #648880 85%, #293f50);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        color: rgb(0, 0, 0);
+    }
+
+    .topnav input[type=search] {
+        float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+        transition: 0.5s;
+    }
+
+    body::-webkit-scrollbar {
+    width: 1vw;
+    height: 7px;  
+}
+body::-webkit-scrollbar-track {
+    background: #000000;
+}
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(to top,#000000b6 35%,#380356b8  ,#6b0078 ) ;
+    border-radius: 50px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    transition: 3.2s;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    width: 5vw;
+    border: 0px;
+}
+
+    #First {
+        position: relative;
+        left: 0;
+        transition: left  1s;
+        margin-left: 10%;
+        
+    }
+
+    #First:focus {
+        left: 30%; 
+        width: 12vw;
+        
+    }
+    #Middle{
+        position: relative;
+        left: 0;
+        
+    }
+    #Middle:focus {
+        transition: 1s;
+        left: 11%;
+        width: 12vw;
+    }
+    #Last{
+        position:relative;
+        right: 0px;
+    }
+    #Last:focus{
+        transition: 1s;
+        right: 4vw;
+        width: 12vw;
+    }
+    #Suffix{
+        position: relative;
+        right: 0px;
+    }
+    #Suffix:focus{
+        transition:1s;
+        right: 15vw;
+        width:12vw
+    }
+    .opacity-transition {
+        opacity: 1;
+        transition: opacity 0.5s;
+        visibility: visible;
+    }
+
+    .opacity-transition.inactive {
+        opacity: 0.5;
+        visibility: hidden;
+    }
+    .realestatetype{
+        margin-left: 1vw;
+    }
+    input{
+        border-radius: 0%;
+        font-family: 'Changa', sans-serif;
+
+    }
+    input:focus{
+        border-radius: 50px;
+        background:#ffdeda;
+        transition: 1s;
+    }
+    h1{
+        font-family: 'Changa', sans-serif;
+    }
+    legend{
+        font-family: 'Changa', sans-serif;
+    }
+    label{
+        font-family: 'Changa', sans-serif;
+    }
+    .button-56 {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 35%;
+    }
+
+    .button-56:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+    }
+
+    .button-56:hover:after {
+    transform: translate(0, 0);
+    }
+
+    .button-56:active {
+     background: linear-gradient(to top, #f6f1d3, #648880 85%, #293f50);
+    outline: 0;
+    }
+
+    .button-56:hover {
+    outline: 0;
+    }
+
+    @media (min-width: 768px) {
+    .button-56 {
+        padding: 0 40px;
+    }
+    }
+    .seperator{
+  background-color: rgb(65, 65, 65);
+ 
+}
+    .contact_info li{
+        
+    background-color: rgb(65, 65, 65);
+    width: 1500x;
+     height: 20px;
+}
+    
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all inputs with the 'test' class
+        const inputs = document.querySelectorAll('.test');
+
+        inputs.forEach(input => {
+            // Add focus event listener
+            input.addEventListener('focus', function () {
+                // Toggle 'inactive' class for all inputs except the focused one
+                inputs.forEach(otherInput => {
+                    if (otherInput !== input) {
+                        otherInput.classList.toggle('inactive');
+                    }
+                });
+            });
+
+            // Add blur event listener
+            input.addEventListener('blur', function () {
+                // Remove 'inactive' class for all inputs when blur occurs
+                inputs.forEach(otherInput => {
+                    otherInput.classList.remove('inactive');
+                }); 
+            });
+        });
+    });
+</script>
+</head>
+
+<body style="background-image: url(wave.svg); z-index: 2; background-repeat: no-repeat;background-size: cover;">
+    <header>
+        
+        <div class="navbar">
+            <ul>
+                <li><a href="HTML TASK EXC 4.HTML" class="About_Us" >About us</a></li>
+                <li><a href="Product or Service.html" class="Product_Service" >Product or Service</a></li>
+                <li><a href="Gallery.html" class="Picture" >Gallery</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><img src="electronic.png" alt="" style="width: 2vw; height: 3vh; margin-right: 1vw;"></a>
+                    <div class="dropdown-content">
+                        <a href="Contact us.html">Check Out</a>
+                        <a href="About us.html">Contact Us</a>
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main style="background-image: url(css-pattern-by-magicpattern.png); ">
+            <div class="RegisteryContainer">
+                <br>
+                <h1 class="signup">Check out</h1>
+                <form>
+                    <fieldset style="border: 0px; " class="name" >
+                        <legend style="margin-left: 1.5vw;">Name</legend>
+                        <input type="text" placeholder="First Name" required class="test opacity-transition " id="First">
+                        <input type="text" placeholder="Middle Name" class="test opacity-transition" id="Middle">
+                        <input type="text" placeholder="Last Name" required class="test opacity-transition" id="Last">
+                        <input type="text" placeholder="Suffix" class="test opacity-transition" id="Suffix">
+                    </fieldset>
+                    <br>
+                    <fieldset style=" margin-top: 4vh; border: 0px; margin-left: 2vw;">
+                        <label for="birthdate">Birthdate:</label><br>
+                        <input type="date" id="birthdate" name="birthdate" style="border-radius: 50px;"><br><br>
+                    </fieldset>
+                    <fieldset style="border: 0px; margin-left: 1.5vw; transition: 1s;">
+                    <legend>Address:</legend>
+                    <textarea id="Address" name="Address" rows="3" cols="50%" placeholder="Home Address"></textarea><br><br>
+                    <input type="text"  name="search" placeholder="City"  size="30vw"><br><br>
+                    <input type="text" name="search" placeholder="Province/State"  size="30vw"><br><br>
+                   
+                    <input type="text" name="search" placeholder="Country"  size="30vw">
+                    </fieldset>
+    
+                    <fieldset style="border: 0px;  margin-left: 1.5vw; font-family: 'Changa', sans-serif;">
+                        <td>Sex:<br>
+                            <ul style="list-style-type:none;margin-left:-3vw;">
+                              <li><input type="radio" name="sex" value="male">Male</li>
+                              <li><input type="radio" name="sex" value="female">Female</li>
+                              <li><input type="radio" name="sex" value="intersex">Intersex</li>
+                              <li><input type="radio" name="sex" value="prefer not to say">Prefer not to say</li>
+                              <li><input type="radio" name="sex" value="other" class="otherSpecify">Other (Please specify):</li><br>
+                              <textarea id="message" name="message" rows="2" cols="30"></textarea><br>
+                            </ul>
+                        </td>
+                    </fieldset>
+                    <fieldset style=" border: 0px; margin-left: 1vw;" >
+                        <legend>Contact Information:</legend><br>
+                        <div >
+                            <input type="email" id="email"  placeholder="Email" size="30vw"><br><br>
+                            <input type="tel" id="phone"  placeholder="Phone" size="30vw"><br><br>
+                            <input type="Password" placeholder="Password" size="30vw" ></textarea>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset style="border: 0px;">
+                        <legend class="realestatetype">What flavor</legend>
+                        <div style="padding-left: 1vw;">
+                            <label for="datalist">Choose from list:</label><br>
+                            <input list="EstateType" name="browser" style="text-align: center; " size="30vw">
+                            <datalist id="EstateType">
+                            <option value="Strawberry Bubbles">
+                            <option value="Valencia Orange Bubbles">
+                            <option value="Cucumber Bubbles">
+                            <option value="Lime Bubbles">
+                            <option value="Original Bubbles">    
+                            <option value="Other">
+                            
+                          
+                             </datalist><br><br>
+                    
+                            <label for="IfOther">If other Please specify:</label><br>
+                            <input class="responsive_other" type="text"  name="IfOther"  size="30vw"><br><br>
+                        
+                            <label for="quantity">Quantity:</label><br>
+                            <input type="number" id="quantity" name="quantity" min="1" max="10"><br><br>
+                        </div>
+                    </fieldset style>
+                    <fieldset style="border: 0px;">
+                    <div style=" padding-left: 1vw;">
+                        <legend>How did you learn about us?</legend>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="sports">Ads</label><br>
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music">Friend</label><br>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="Neighbour">Neighbour</label><br>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="Website">Website</label><br>
+                        <input type="checkbox" id="sports" name="interests" value="sports">
+                        <label for="searched">Searched  </label><br>
+                    <label for="message">Other: (Please specify)</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                    </div>
+                </fieldset>
+                <button class="button-56"  type="reset" role="button" style="top: 7vh; left: 10vw; background-color: rgb(205, 13, 13);">reset</button>
+                <button class="button-56"  type="submit" role="button">submit</button><br><br>
+    
+                </form>   
+            </div>
+            <br>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 JUST Water, Inc. </p>
+        <p style="background-color: #5a008e;">Jerick Czyloupher L Mendoza <br><br></p>
+    </footer> 
+</body>
+</html>
